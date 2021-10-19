@@ -1,9 +1,0 @@
-newmtl Model001_Material001
-map_Kd diff_null_mat002.png
-
-newmtl Model001_Material002
-map_Kd ST280.png
-
-newmtl Model001_Material003
-map_Kd green_med_trans.png
-

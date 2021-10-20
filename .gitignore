@@ -15,6 +15,7 @@ GAME208_AR/[Mm]emoryCaptures/
 GAME208_AR/Assets/Models/Loser.fbx
 GAME208_AR/Assets/Models/Hip Hop Dancing.fbx
 GAME208_AR/Assets/Models/Ch10_nonPBR.fbx
+GAME208_AR/Assets/Models/Taunt Gesture.fbx
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !GAME208_AR/[Aa]ssets/**/*.meta

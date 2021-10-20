@@ -10,6 +10,12 @@ GAME208_AR/[Bb]uilds/
 GAME208_AR/[Ll]ogs/
 GAME208_AR/[Mm]emoryCaptures/
 
+
+#Large Files
+GAME208_AR/Assets/Models/Loser.fbx
+GAME208_AR/Assets/Models/Hip Hop Dancing.fbx
+GAME208_AR/Assets/Models/Ch10_nonPBR.fbx
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !GAME208_AR/[Aa]ssets/**/*.meta
 

@@ -26,14 +26,10 @@ public class PlaceObject : MonoBehaviour
         touchPosition = Vector2.zero;
         return false;
     }
-
-
    // void Start()
    // {
         
    // }
-
-    // Update is called once per frame
     // Update is called once per frame
     void Update()
     {
@@ -42,8 +38,7 @@ public class PlaceObject : MonoBehaviour
         if (!GetTouchPosition(out Vector2 touchPosition))
             return;
         // Touch event occured
-        if (arRaycastManager.Raycast(touchPosition, hits,
-        TrackableType.PlaneWithinPolygon))
+        if (arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
         {
             Debug.Log("touched");
             Pose hitPose = hits[0].pose;

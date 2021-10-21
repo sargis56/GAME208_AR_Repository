@@ -1781,6 +1781,8 @@ GameObject:
   - component: {fileID: 2081229874}
   - component: {fileID: 2081229873}
   - component: {fileID: 2081229875}
+  - component: {fileID: 2081229877}
+  - component: {fileID: 2081229876}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -1830,6 +1832,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlanePrefab: {fileID: 646779147}
   m_DetectionMode: 2147483647
+--- !u!114 &2081229876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081229872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12952e3c1ea670543a03eaf537de08a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1317113880}
+--- !u!114 &2081229877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081229872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RaycastPrefab: {fileID: 0}
 --- !u!4 &32333675618660928
 Transform:
   m_ObjectHideFlags: 0

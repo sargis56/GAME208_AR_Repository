@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -8,6 +9,7 @@ using UnityEngine.XR.ARSubsystems;
 public class PlaceObject : MonoBehaviour
 {
     public GameObject objectToSpawn;
+    public Text txt;
     GameObject spawnedObject;
     ARRaycastManager arRaycastManager;
     Vector2 touchPosition;
@@ -36,6 +38,7 @@ public class PlaceObject : MonoBehaviour
         Debug.Log("update");
         // Check to see if there was no Touch event on Screen
         if (!GetTouchPosition(out Vector2 touchPosition))
+           // txt.text = "blah blah text";
             return;
         // Touch event occured
         if (arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))

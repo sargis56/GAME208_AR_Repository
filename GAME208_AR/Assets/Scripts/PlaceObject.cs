@@ -22,9 +22,11 @@ public class PlaceObject : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
+            //txt.text = "null";
             touchPosition = Input.GetTouch(0).position;
             return true;
         }
+       // txt.text = "zero";
         touchPosition = Vector2.zero;
         return false;
     }
@@ -35,14 +37,16 @@ public class PlaceObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("update");
+        //Debug.Log("update");
         // Check to see if there was no Touch event on Screen
+
         if (!GetTouchPosition(out Vector2 touchPosition))
            // txt.text = "blah blah text";
             return;
         // Touch event occured
         if (arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
         {
+            txt.text = "blah blah text";
             Debug.Log("touched");
             Pose hitPose = hits[0].pose;
             if (spawnedObject == null)

@@ -47,7 +47,7 @@ public class PlaceObject : MonoBehaviour
         if (arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
         {
             txt.text = "blah blah text";
-            Debug.Log("touched");
+            //Debug.Log("touched");
             Pose hitPose = hits[0].pose;
             if (spawnedObject == null)
                 spawnedObject = Instantiate(objectToSpawn, hitPose.position,

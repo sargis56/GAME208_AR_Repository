@@ -105,9 +105,10 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
 
-            if (firing == true)
+            if (firing == true && oppenTurn == false)
             {
                 Instantiate(firePointer, firePointer.transform.position, firePointer.transform.rotation);
+                oppenTurn = true;
             }
 
             if (placing == true)

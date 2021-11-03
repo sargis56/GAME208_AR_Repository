@@ -70,6 +70,7 @@ public class GameController : MonoBehaviour
     {
         if (boardArrayAlly[x, y] == true)
         {
+            boardArrayAlly[x, y] = false;
             return true;
         }
         return false;

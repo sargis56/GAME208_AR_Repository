@@ -47,10 +47,10 @@ public class AIController : MonoBehaviour
                     boardArray[randX, randZ] = true; //position is now hit
                     firePointer.transform.position = new Vector3(firePointer.transform.position.x + (randX * -5.5f), firePointer.transform.position.y, firePointer.transform.position.z + (randZ * 5.5f)); //place the pin in the spot
                     Instantiate(firePointer, firePointer.transform.position, firePointer.transform.rotation); //create the pin
-                    GameControllerScript.oppenTurn = false; //AI's turn is over
+                    //GameControllerScript.oppenTurn = false; //AI's turn is over
                     if (GameControllerScript.CheckHitEnemy(randX, randZ) == true) //check if the AI hit a ship
                     {
-                        Debug.Log("HIT");
+                        Debug.Log("SPOT HIT " + randX + " " + randZ);
                         lastHitX = randX; //set lastHit to location hit
                         lastHitZ = randZ;
                         originalHitX = randX; //set original pos just in case the AI takes a weird path down the ship like if it hits the middle and it follows down and gets stuck at the end because of the + (line 64)
@@ -60,9 +60,9 @@ public class AIController : MonoBehaviour
                 }
             }
             else
-            {                                                                                                              //        | +1z
-                int spotX = Random.Range((lastHitX - 1), (lastHitX + 1)); //generate a location close to the hit in a + shape  -1x --|-- +1x //in theory I DONT THINK ITS WORKING
-                int spotZ = Random.Range((lastHitZ - 1), (lastHitZ + 1));                                                  //        | -1z
+            {                                                                                                              //        | +2z
+                int spotX = Random.Range((lastHitX - 1), (lastHitX + 2)); //generate a location close to the hit in a + shape  -1x --|-- +2x
+                int spotZ = Random.Range((lastHitZ - 1), (lastHitZ + 2));                                                  //        | -1z
                 if (boardArray[spotX, spotZ] == false) //if the spot is empty
                 {
                     boardArray[spotX, spotZ] = true; //make it full
@@ -71,7 +71,7 @@ public class AIController : MonoBehaviour
                     GameControllerScript.oppenTurn = false; //AI's turn is over
                     if (GameControllerScript.CheckHitEnemy(spotX, spotZ) == true) //check if the AI hit a ship
                     {
-                        Debug.Log("YERRr");
+                        Debug.Log("SPOT HIT " + spotX + " " + spotZ);
                         lastHitX = spotX; //set lastHit to location hit
                         lastHitZ = spotZ;
                     }
@@ -81,6 +81,10 @@ public class AIController : MonoBehaviour
                     Debug.Log("RIPPPPP");
                     lastHitX = originalHitX;
                     lastHitZ = originalHitZ;
+                    if (boardArray[originalHitX - 1, originalHitZ - 1] == true && boardArray[originalHitX + 1, originalHitZ - 1] == true && boardArray[originalHitX - 1, originalHitZ + 1] == true && boardArray[originalHitX + 1, originalHitZ + 1] == true)
+                    { //last fail safe to reset the AI
+                        previousHit = false;
+                    }
                 }
             }
         }

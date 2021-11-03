@@ -1102,6 +1102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc0179271eff114a9f5ee6004c56059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AIControllerScript: {fileID: 1800338915}
   win: 0
   lose: 0
   oppenTurn: 0
@@ -1382,7 +1383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2142dbfe42c517a4a9b0ad917d577c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameControlleScript: {fileID: 1351432782}
+  GameControllerScript: {fileID: 1351432782}
   firePointer: {fileID: 819678665}
 --- !u!4 &1800338916
 Transform:

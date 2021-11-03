@@ -47,7 +47,7 @@ public class AIController : MonoBehaviour
                     boardArray[randX, randZ] = true; //position is now hit
                     firePointer.transform.position = new Vector3(firePointer.transform.position.x + (randX * -5.5f), firePointer.transform.position.y, firePointer.transform.position.z + (randZ * 5.5f)); //place the pin in the spot
                     Instantiate(firePointer, firePointer.transform.position, firePointer.transform.rotation); //create the pin
-                    //GameControllerScript.oppenTurn = false; //AI's turn is over
+                    GameControllerScript.oppenTurn = false; //AI's turn is over
                     if (GameControllerScript.CheckHitEnemy(randX, randZ) == true) //check if the AI hit a ship
                     {
                         Debug.Log("SPOT HIT " + randX + " " + randZ);

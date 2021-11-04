@@ -22,7 +22,7 @@ public class CollsionDetect : MonoBehaviour
     {
         if (collision.gameObject.tag == "EnemyPin")
         {
-            Debug.Log("Colided");
+            Debug.Log("Collided");
             GameControllerScript.lose = true;
         }
     }

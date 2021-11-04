@@ -38,65 +38,20 @@ public class GameController : MonoBehaviour
 
     private int numShips = 5;
 
-    public bool[,] boardArrayEnemy;
-    public bool[,] boardArrayAlly;
-
-    //ships on the board
-    bool ship1 = true;
-
     private void Awake()
     {
-        boardArrayEnemy = new bool[11, 11]; //creates arrays for the boards of other players to tell if there is a boat on a space
-        boardArrayAlly = new bool[11, 11]; //if a tile is true then a ship exists on the tile - once all tiles are false the other player wins
-        for (int x = 0; x < 11; x++)
-        {
-            for (int y = 0; y < 11; y++)
-            {
-                boardArrayEnemy[x, y] = false;
-                boardArrayAlly[x, y] = false;
-            }
-        }
+    
     }
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //test inputs
-      //  boardArrayAlly[5, 1] = true; //if a tile is true then a ship exists on the tile - once all tiles are false the other player wins
-       // boardArrayAlly[4, 1] = true;
-        boardArrayAlly[2, 2] = true;
-        boardArrayAlly[2, 3] = true;
-        boardArrayAlly[2, 4] = true;
-        // boardArrayAlly[2, 1] = true;
     }
-
-    public bool CheckHitEnemy(int x, int y) //used to check if a hit occurred
-    {
-        if (boardArrayAlly[x, y] == true)
-        {
-            boardArrayAlly[x, y] = false;
-            return true;
-        }
-        return false;
-    }
-
-    void ShipDestroyed() //called if a ship is destroyed
-    {
-        //can print something to screen too later
-        AIControllerScript.ResetPreviousHit();
-    }
-
     // Update is called once per frame
     void Update()
     {
-        //if (boardArrayAlly[5, 1] == false && boardArrayAlly[4, 1] == false && boardArrayAlly[3, 1] == false && boardArrayAlly[2, 1] == false) //test AI code
-        if (boardArrayAlly[2, 2] == false && boardArrayAlly[2, 3] == false && boardArrayAlly[2, 4] == false && ship1 == true)
-        {
-            ship1 = false;
-            ShipDestroyed();
-            Debug.Log("Destroyed");
-        }
+
 
         if (win == true)
         {

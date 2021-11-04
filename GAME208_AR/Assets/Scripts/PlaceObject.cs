@@ -10,10 +10,11 @@ using UnityEngine.EventSystems;
 public class PlaceObject : MonoBehaviour
 {
     public GameObject objectToSpawn;
-    public Text txt;
-    GameObject spawnedObject;
-    ARRaycastManager arRaycastManager;
-    Vector2 touchPosition;
+    
+    private GameObject spawnedObject;
+    private ARRaycastManager arRaycastManager;
+    private Vector2 touchPosition;
+
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
     void Awake()
     {
@@ -47,8 +48,8 @@ public class PlaceObject : MonoBehaviour
         // Touch event occured
         if (arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
         {
-            txt.text = "blah blah text";
-            //Debug.Log("touched");
+            
+            
             Pose hitPose = hits[0].pose;
             if (spawnedObject == null)
                 spawnedObject = Instantiate(objectToSpawn, hitPose.position,

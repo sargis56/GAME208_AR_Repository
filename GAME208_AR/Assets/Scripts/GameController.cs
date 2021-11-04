@@ -115,7 +115,9 @@ public class GameController : MonoBehaviour
 
             if (firing == true && oppenTurn == false)
             {
+                firePointer.tag = "FirePin";
                 Instantiate(firePointer, firePointer.transform.position, firePointer.transform.rotation);
+                firePointer.tag = "DudFirePin";
                 oppenTurn = true;
             }
 

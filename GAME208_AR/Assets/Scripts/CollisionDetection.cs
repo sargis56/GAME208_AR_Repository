@@ -25,5 +25,10 @@ public class CollisionDetection : MonoBehaviour
             Debug.Log("Collided");
             GameControllerScript.lose = true;
         }
+        if (collision.gameObject.tag == "FirePin")
+        {
+            Debug.Log("Collided");
+            GameControllerScript.win = true;
+        }
     }
 }

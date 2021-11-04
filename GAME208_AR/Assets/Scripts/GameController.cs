@@ -36,6 +36,8 @@ public class GameController : MonoBehaviour
     private bool selectMediumShip;
     private GameObject selectedShip;
 
+    private int numShips = 5;
+
     public bool[,] boardArrayEnemy;
     public bool[,] boardArrayAlly;
 
@@ -169,7 +171,7 @@ public class GameController : MonoBehaviour
                 {
                     Instantiate(selectedShip, shipPointer.transform.position, selectedShip.transform.rotation = new Quaternion(0, 0, 0, 0));
                 }
-
+                numShips -= 1;
             }
         }
 
@@ -291,6 +293,11 @@ public class GameController : MonoBehaviour
             }
         }
 
+        if (numShips <= 0)
+        {
+            placing = false;
+            firing = true;
+        }
 
     }
 
@@ -305,4 +312,7 @@ public class GameController : MonoBehaviour
         //rb.AddForce(movement);
     }
 
+
+
 }
+

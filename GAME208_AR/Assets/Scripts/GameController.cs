@@ -39,6 +39,9 @@ public class GameController : MonoBehaviour
     public bool[,] boardArrayEnemy;
     public bool[,] boardArrayAlly;
 
+    //ships on the board
+    bool ship1 = true;
+
     private void Awake()
     {
         boardArrayEnemy = new bool[11, 11]; //creates arrays for the boards of other players to tell if there is a boat on a space
@@ -86,8 +89,9 @@ public class GameController : MonoBehaviour
     void Update()
     {
         //if (boardArrayAlly[5, 1] == false && boardArrayAlly[4, 1] == false && boardArrayAlly[3, 1] == false && boardArrayAlly[2, 1] == false) //test AI code
-        if (boardArrayAlly[2, 2] == false && boardArrayAlly[2, 3] == false && boardArrayAlly[2, 4] == false)
+        if (boardArrayAlly[2, 2] == false && boardArrayAlly[2, 3] == false && boardArrayAlly[2, 4] == false && ship1 == true)
         {
+            ship1 = false;
             ShipDestroyed();
             Debug.Log("Destroyed");
         }

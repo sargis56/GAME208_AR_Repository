@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/scene_AR_copy.unity
     guid: f5b2b51c82032c242b2341943619f659
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/scene1.unity
     guid: e6d517577a05b6645b5382bd5e5bdab9
+  - enabled: 1
+    path: Assets/Scenes/Dars tester.unity
+    guid: 2e1b0c41248692a4b95f5fb0e286977c
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 1fd73844e44f27d4585b92722fab8419, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 2ef5dca79bd66e44eb3ac413b0124e2c, type: 2}

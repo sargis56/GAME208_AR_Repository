@@ -46,7 +46,7 @@ public class PlaceObject : MonoBehaviour
            // txt.text = "blah blah text";
             return;
         // Touch event occured
-        if (arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
+        if (arRaycastManager.Raycast(touchPosition, hits, TrackableType.All))
         {
             
             

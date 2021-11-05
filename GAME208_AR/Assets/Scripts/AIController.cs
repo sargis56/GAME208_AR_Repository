@@ -40,7 +40,7 @@ public class AIController : MonoBehaviour
         int randX, randZ, rotation;
         //boat 1
         randX = Random.Range(0, 7); //generate random pos for boat 2
-        randZ = Random.Range(0, 7);
+        randZ = Random.Range(0, 10);
         rotation = Random.Range(0, 1);
         if (AIPlacementArray[randX, randZ] == false && AIPlacementArray[randX + 1, randZ] == false && AIPlacementArray[randX + 2, randZ] == false)
         {
@@ -49,15 +49,15 @@ public class AIController : MonoBehaviour
             AIPlacementArray[randX + 1, randZ] = true;
             AIPlacementArray[randX + 2, randZ] = true;
         }
-        randX = Random.Range(0, 7); //generate random pos for boat 3
+        randX = Random.Range(0, 10); //generate random pos for boat 3
         randZ = Random.Range(0, 7);
         rotation = Random.Range(0, 1);
-        if (AIPlacementArray[randX, randZ] == false && AIPlacementArray[randX + 1, randZ] == false && AIPlacementArray[randX + 2, randZ] == false)
+        if (AIPlacementArray[randX, randZ] == false && AIPlacementArray[randX - 1, randZ] == false && AIPlacementArray[randX - 2, randZ] == false)
         {
             boatCollision3.transform.position = new Vector3(boatCollision3.transform.position.x + (randX * -spaceSize), boatCollision3.transform.position.y - (randZ * spaceSize), boatCollision3.transform.position.z);
             AIPlacementArray[randX, randZ] = true;
-            AIPlacementArray[randX + 1, randZ] = true;
-            AIPlacementArray[randX + 2, randZ] = true;
+            AIPlacementArray[randX, randZ - 1] = true;
+            AIPlacementArray[randX, randZ - 2] = true;
         }
     }
     // Update is called once per frame

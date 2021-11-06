@@ -1538,6 +1538,7 @@ MonoBehaviour:
   AIToggle: 1
   GameControllerScript: {fileID: 1351432782}
   firePointer: {fileID: 819678665}
+  boatCollision1: {fileID: 4327654265097544986}
   boatCollision2: {fileID: 919132148839482992}
   boatCollision3: {fileID: 1797716804}
   spaceSize: 5.5
@@ -1562,6 +1563,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4958023277455573924, guid: 4da3b5bcb7ef7b94a956077037a3449c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5126240200207276335, guid: 4da3b5bcb7ef7b94a956077037a3449c, type: 3}
       propertyPath: m_Name
       value: Boat_3_Enemy (2)
@@ -2530,6 +2535,71 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &1961600024978284104
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 906850934350901669, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_Center.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825985076845460306, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_Name
+      value: Boat_2_Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205501738452640232, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205501738452640232, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205501738452640232, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 61.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205501738452640232, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -29.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205501738452640232, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205501738452640232, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205501738452640232, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205501738452640232, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205501738452640232, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205501738452640232, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205501738452640232, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749184264641964411, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: GameControllerScript
+      value: 
+      objectReference: {fileID: 1351432782}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
 --- !u!1 &2581956588191119746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2916,6 +2986,11 @@ Transform:
   m_Father: {fileID: 543450651849532101}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4327654265097544986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825985076845460306, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+  m_PrefabInstance: {fileID: 1961600024978284104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4345788298154495721
 Transform:
   m_ObjectHideFlags: 0
@@ -3104,9 +3179,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4958023277455573924, guid: 4da3b5bcb7ef7b94a956077037a3449c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5126240200207276335, guid: 4da3b5bcb7ef7b94a956077037a3449c, type: 3}
       propertyPath: m_Name
       value: Boat_3_Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126240200207276335, guid: 4da3b5bcb7ef7b94a956077037a3449c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5468911036430263420, guid: 4da3b5bcb7ef7b94a956077037a3449c, type: 3}
       propertyPath: GameControllerScript

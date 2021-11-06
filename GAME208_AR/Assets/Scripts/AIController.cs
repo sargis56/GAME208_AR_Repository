@@ -8,7 +8,7 @@ public class AIController : MonoBehaviour
     public GameController GameControllerScript;
     public GameObject firePointer;
 
-   // public GameObject boatCollision1;
+    public GameObject boatCollision1;
     public GameObject boatCollision2;
     public GameObject boatCollision3;
    // public GameObject boatCollision4;
@@ -37,11 +37,19 @@ public class AIController : MonoBehaviour
         firePointer.SetActive(false);
         //GameControllerRef = GameObject.Find("GameController");
         //GameControlleScript = GameControllerRef.GetComponent<GameController>();
-        int randX, randZ, rotation;
+        int randX, randZ;
         //boat 1
-        randX = Random.Range(0, 7); //generate random pos for boat 2
+        randX = Random.Range(0, 10); //generate random pos for boat 1
+        randZ = Random.Range(1, 8);
+        if (AIPlacementArray[randX, randZ] == false && AIPlacementArray[randX - 1, randZ] == false)
+        {
+            boatCollision1.transform.position = new Vector3(boatCollision1.transform.position.x + (randX * -spaceSize), boatCollision1.transform.position.y - (randZ * spaceSize), boatCollision1.transform.position.z);
+            AIPlacementArray[randX, randZ] = true;
+            AIPlacementArray[randX, randZ - 1] = true;
+        }
+        //boat 2
+        randX = Random.Range(0, 6); //generate random pos for boat 2
         randZ = Random.Range(0, 10);
-        rotation = Random.Range(0, 1);
         if (AIPlacementArray[randX, randZ] == false && AIPlacementArray[randX + 1, randZ] == false && AIPlacementArray[randX + 2, randZ] == false)
         {
             boatCollision2.transform.position = new Vector3(boatCollision2.transform.position.x + (randX * -spaceSize), boatCollision2.transform.position.y - (randZ * spaceSize), boatCollision2.transform.position.z);
@@ -49,9 +57,9 @@ public class AIController : MonoBehaviour
             AIPlacementArray[randX + 1, randZ] = true;
             AIPlacementArray[randX + 2, randZ] = true;
         }
+        //boat 3
         randX = Random.Range(0, 10); //generate random pos for boat 3
-        randZ = Random.Range(0, 7);
-        rotation = Random.Range(0, 1);
+        randZ = Random.Range(2, 7);
         if (AIPlacementArray[randX, randZ] == false && AIPlacementArray[randX - 1, randZ] == false && AIPlacementArray[randX - 2, randZ] == false)
         {
             boatCollision3.transform.position = new Vector3(boatCollision3.transform.position.x + (randX * -spaceSize), boatCollision3.transform.position.y - (randZ * spaceSize), boatCollision3.transform.position.z);

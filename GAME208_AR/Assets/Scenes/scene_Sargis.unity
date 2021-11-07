@@ -1135,6 +1135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameControllerScript: {fileID: 1351432782}
+  AIControllerScript: {fileID: 0}
 --- !u!65 &1317113883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1444,6 +1445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameControllerScript: {fileID: 1351432782}
+  AIControllerScript: {fileID: 0}
 --- !u!1001 &1684247776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1571,6 +1573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boat_3_Enemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5468911036430263420, guid: 4da3b5bcb7ef7b94a956077037a3449c, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1800338915}
     - target: {fileID: 5468911036430263420, guid: 4da3b5bcb7ef7b94a956077037a3449c, type: 3}
       propertyPath: GameControllerScript
       value: 
@@ -2599,6 +2605,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4749184264641964411, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1800338915}
+    - target: {fileID: 4749184264641964411, guid: 097aaa5d7eb01d84ba4c8331ffa6f2b1, type: 3}
       propertyPath: GameControllerScript
       value: 
       objectReference: {fileID: 1351432782}
@@ -3195,6 +3205,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5468911036430263420, guid: 4da3b5bcb7ef7b94a956077037a3449c, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1800338915}
     - target: {fileID: 5468911036430263420, guid: 4da3b5bcb7ef7b94a956077037a3449c, type: 3}
       propertyPath: GameControllerScript
       value: 

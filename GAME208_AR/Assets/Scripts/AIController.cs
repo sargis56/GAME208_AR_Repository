@@ -40,7 +40,7 @@ public class AIController : MonoBehaviour
         int randX, randZ;
         //boat 1
         randX = Random.Range(0, 10); //generate random pos for boat 1
-        randZ = Random.Range(1, 9);
+        randZ = Random.Range(1, 8);
         Debug.Log("X " + randX + " Z " + randZ);
         if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX, randZ - 1] == false)
         {
@@ -90,6 +90,21 @@ public class AIController : MonoBehaviour
                         GameControllerScript.oppenTurn = false; //AI's turn is over
                     } //i have more code by Sargis wanted to go a different direction so I ended up deleteing way more than half of it
             }
+        }
+    }
+    public void DamageCheck(Vector3 pos)
+    {
+        if (boatCollision1.transform.position == pos)
+        {
+            Debug.Log("Collided boat1");
+        }
+        else if (boatCollision2.transform.position == pos)
+        {
+            Debug.Log("Collided boat2");
+        }
+        else if (boatCollision3.transform.position == pos)
+        {
+            Debug.Log("Collided boat3");
         }
     }
 }

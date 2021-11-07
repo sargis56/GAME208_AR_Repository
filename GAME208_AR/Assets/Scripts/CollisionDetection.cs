@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour
 {
     public GameController GameControllerScript;
+    public AIController AIControllerScript;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +28,7 @@ public class CollisionDetection : MonoBehaviour
         }
         if (collision.gameObject.tag == "FirePin")
         {
-            Debug.Log("Collided");
-            GameControllerScript.win = true;
+            AIControllerScript.DamageCheck(gameObject.transform.position);
         }
     }
 }

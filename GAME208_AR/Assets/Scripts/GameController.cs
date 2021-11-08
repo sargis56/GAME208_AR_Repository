@@ -29,11 +29,17 @@ public class GameController : MonoBehaviour
 
     public GameObject smallShip;
     public GameObject mediumShip;
+    public GameObject mediumShip2;
+    public GameObject battleshipShip;
+    public GameObject destroyerShip;
 
     private Rigidbody rb;
     private bool rotateShip;
     private bool selectSmallShip;
     private bool selectMediumShip;
+    private bool selectMediumShip2;
+    private bool selectDestroyerShip;
+    private bool selectBattleshipShip;
     private GameObject selectedShip;
 
     private int numShips = 5;
@@ -175,11 +181,17 @@ public class GameController : MonoBehaviour
         {
             smallShip.transform.rotation = Quaternion.Euler(Vector3.up * 90);
             mediumShip.transform.rotation = Quaternion.Euler(Vector3.up * 90);
+            mediumShip2.transform.rotation = Quaternion.Euler(Vector3.up * 90);
+            battleshipShip.transform.rotation = Quaternion.Euler(Vector3.up * 90);
+            destroyerShip.transform.rotation = Quaternion.Euler(Vector3.up * 90);
         }
         else
         {
             smallShip.transform.rotation = new Quaternion(0, 0, 0, 0);
             mediumShip.transform.rotation = new Quaternion(0, 0, 0, 0);
+            mediumShip2.transform.rotation = new Quaternion(0, 0, 0, 0);
+            battleshipShip.transform.rotation = new Quaternion(0, 0, 0, 0);
+            destroyerShip.transform.rotation = new Quaternion(0, 0, 0, 0);
         }
 
         if (Input.GetKeyDown("1"))
@@ -195,11 +207,43 @@ public class GameController : MonoBehaviour
             
         }
 
+        if (Input.GetKeyDown("3"))
+        {
+            if (selectMediumShip2 == true)
+            {
+                selectMediumShip2 = false;
+            }
+            else
+            {
+                selectMediumShip2 = true;
+            }
+
+        }
+
+        if (Input.GetKeyDown("4"))
+        {
+            if (selectBattleshipShip == true)
+            {
+                selectBattleshipShip = false;
+            }
+            else
+            {
+                selectBattleshipShip = true;
+            }
+
+        }
+
         if (selectSmallShip == true)
         {
             smallShip.SetActive(true);
             mediumShip.SetActive(false);
+            mediumShip2.SetActive(false);
+            battleshipShip.SetActive(false);
+            destroyerShip.SetActive(false);
             selectMediumShip = false;
+            selectDestroyerShip = false;
+            selectMediumShip2 = false;
+            selectBattleshipShip = false;
             selectedShip = smallShip;
         }
         else
@@ -223,13 +267,86 @@ public class GameController : MonoBehaviour
         if (selectMediumShip == true)
         {
             mediumShip.SetActive(true);
+            mediumShip2.SetActive(false);
+            battleshipShip.SetActive(false);
             smallShip.SetActive(false);
+            destroyerShip.SetActive(false);
+            selectDestroyerShip = false;
             selectSmallShip = false;
+            selectMediumShip2 = false;
+            selectBattleshipShip = false;
             selectedShip = mediumShip;
         }
         else
         {
             mediumShip.SetActive(false);
+        }
+
+        if (Input.GetKeyDown("5"))
+        {
+            if (selectDestroyerShip == true)
+            {
+                selectDestroyerShip = false;
+            }
+            else
+            {
+                selectDestroyerShip = true;
+            }
+
+        }
+
+        if (selectDestroyerShip == true)
+        {
+            mediumShip.SetActive(false);
+            mediumShip2.SetActive(false);
+            battleshipShip.SetActive(false);
+            smallShip.SetActive(false);
+            destroyerShip.SetActive(true);
+            selectSmallShip = false;
+            selectMediumShip = false;
+            selectMediumShip2 = false;
+            selectBattleshipShip = false;
+            selectedShip = destroyerShip;
+        }
+        else
+        {
+            destroyerShip.SetActive(false);
+        }
+
+        if (selectMediumShip2 == true)
+        {
+            mediumShip.SetActive(false);
+            mediumShip2.SetActive(true);
+            battleshipShip.SetActive(false);
+            smallShip.SetActive(false);
+            destroyerShip.SetActive(false);
+            selectSmallShip = false;
+            selectMediumShip = false;
+            selectDestroyerShip = false;
+            selectBattleshipShip = false;
+            selectedShip = mediumShip2;
+        }
+        else
+        {
+            mediumShip2.SetActive(false);
+        }
+
+        if (selectBattleshipShip == true)
+        {
+            mediumShip.SetActive(false);
+            mediumShip2.SetActive(false);
+            battleshipShip.SetActive(true);
+            smallShip.SetActive(false);
+            destroyerShip.SetActive(false);
+            selectSmallShip = false;
+            selectMediumShip = false;
+            selectDestroyerShip = false;
+            selectMediumShip2 = false;
+            selectedShip = battleshipShip;
+        }
+        else
+        {
+            battleshipShip.SetActive(false);
         }
 
         if (Input.GetKeyDown("w"))

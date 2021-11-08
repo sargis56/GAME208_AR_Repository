@@ -11,7 +11,7 @@ public class AIController : MonoBehaviour
     public GameObject boatCollision1;
     public GameObject boatCollision2;
     public GameObject boatCollision3;
-   // public GameObject boatCollision4;
+    //public GameObject boatCollision4;
     //public GameObject boatCollision5;
 
     public float spaceSize;
@@ -94,17 +94,17 @@ public class AIController : MonoBehaviour
     }
     public void DamageCheck(Vector3 pos)
     {
-        if (boatCollision1.transform.position == pos)
+        if (boatCollision1.transform.position == pos) //check which boat got collided with collision 
         {
-            Debug.Log("Collided boat1");
+            GameControllerScript.ApplyDamage(6);
         }
         else if (boatCollision2.transform.position == pos)
         {
-            Debug.Log("Collided boat2");
+            GameControllerScript.ApplyDamage(7);
         }
         else if (boatCollision3.transform.position == pos)
         {
-            Debug.Log("Collided boat3");
+            GameControllerScript.ApplyDamage(8);
         }
     }
 }

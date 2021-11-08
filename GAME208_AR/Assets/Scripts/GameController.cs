@@ -37,12 +37,33 @@ public class GameController : MonoBehaviour
     private GameObject selectedShip;
 
     private int numShips = 5;
+    //boat variables
+    int enemyBoat1Health = 4;
+    int enemyBoat2Health = 6;
+    int enemyBoat3Health = 6;
 
     private void Awake()
     {
     
     }
-
+    public void ApplyDamage(int boatNumber) //players boats are 1-5 and the enemies boats are 6-10
+    {
+        if (boatNumber == 6)
+        {
+            enemyBoat1Health--;
+            Debug.Log("Collided " + enemyBoat1Health);
+        }
+        if (boatNumber == 7)
+        {
+            enemyBoat2Health--;
+            Debug.Log("Collided " + enemyBoat2Health);
+        }
+        if (boatNumber == 8)
+        {
+            enemyBoat3Health--;
+            Debug.Log("Collided " + enemyBoat3Health);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +72,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enemyBoat1Health <= 0 && enemyBoat2Health <= 0 && enemyBoat3Health <= 0)
+        {
+            win = true;
+        }
         if (win == true)
         {
             winText.SetActive(true);
@@ -113,9 +138,9 @@ public class GameController : MonoBehaviour
 
             if (firing == true && oppenTurn == false)
             {
-                firePointer.tag = "FirePin";
-                Instantiate(firePointer, firePointer.transform.position, firePointer.transform.rotation);
-                firePointer.tag = "DudFirePin";
+                firePointer.tag = "FirePin"; //make the firePointer active
+                Instantiate(firePointer, firePointer.transform.position, firePointer.transform.rotation); //place the pointer
+                firePointer.tag = "DudFirePin"; //make the pointer a dud for the next use - this is done so when choosing a place to put the pointer is not colliding with the boats
                 oppenTurn = true;
             }
 

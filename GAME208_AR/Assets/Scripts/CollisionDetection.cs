@@ -21,14 +21,14 @@ public class CollisionDetection : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "EnemyPin")
+        if (collision.gameObject.tag == "EnemyPin") //check which pin hit the target
         {
             Debug.Log("Collided");
             GameControllerScript.lose = true;
         }
         if (collision.gameObject.tag == "FirePin")
         {
-            AIControllerScript.DamageCheck(gameObject.transform.position);
+            AIControllerScript.DamageCheck(gameObject.transform.position); //do a damage check of the AI ships
         }
     }
 }

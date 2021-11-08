@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/scene1.unity
     guid: e6d517577a05b6645b5382bd5e5bdab9
   - enabled: 1
-    path: Assets/Scenes/Dars tester.unity
+    path: Assets/Scenes/Main Scene.unity
     guid: 2e1b0c41248692a4b95f5fb0e286977c
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 1fd73844e44f27d4585b92722fab8419, type: 2}

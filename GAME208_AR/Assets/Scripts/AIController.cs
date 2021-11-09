@@ -11,10 +11,11 @@ public class AIController : MonoBehaviour
     public GameObject boatCollision1;
     public GameObject boatCollision2;
     public GameObject boatCollision3;
-    //public GameObject boatCollision4;
-    //public GameObject boatCollision5;
+    public GameObject boatCollision4;
+    public GameObject boatCollision5;
 
-    public float spaceSize;
+    public float spaceSizeFireBoard;
+    public float spaceSizePlaceBoard;
     public bool[,] boardArray;
     public bool[,] AIPlacementArray;
     int lastHitX, lastHitZ, originalHitX, originalHitZ;
@@ -40,35 +41,115 @@ public class AIController : MonoBehaviour
         int randX, randZ;
         //boat 1
         randX = Random.Range(0, 10); //generate random pos for boat 1
-        randZ = Random.Range(1, 8);
-        Debug.Log("X " + randX + " Z " + randZ);
+        randZ = Random.Range(1, 10);
+        //Debug.Log("X " + randX + " Z " + randZ);
         if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX, randZ - 1] == false)
         {
-            boatCollision1.transform.position = new Vector3(boatCollision1.transform.position.x + (randX * -spaceSize), boatCollision1.transform.position.y - (randZ * spaceSize), boatCollision1.transform.position.z);
+            boatCollision1.transform.position = new Vector3(boatCollision1.transform.position.x + (randX * -spaceSizeFireBoard), boatCollision1.transform.position.y - (randZ * spaceSizeFireBoard), boatCollision1.transform.position.z);
             AIPlacementArray[randX, randZ] = true;
             AIPlacementArray[randX, randZ - 1] = true;
         }
         //boat 2
-        randX = Random.Range(1, 8); //generate random pos for boat 2
-        randZ = Random.Range(1, 10);
-        Debug.Log("X " + randX + " Z " + randZ);
+        randX = Random.Range(2, 10); //generate random pos for boat 2
+        randZ = Random.Range(0, 10);
+        //Debug.Log("X " + randX + " Z " + randZ);
         if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX - 1, randZ] == false || AIPlacementArray[randX - 2, randZ] == false)
         {
-            boatCollision2.transform.position = new Vector3(boatCollision2.transform.position.x + (randX * -spaceSize), boatCollision2.transform.position.y - (randZ * spaceSize), boatCollision2.transform.position.z);
+            boatCollision2.transform.position = new Vector3(boatCollision2.transform.position.x + (randX * -spaceSizeFireBoard), boatCollision2.transform.position.y - (randZ * spaceSizeFireBoard), boatCollision2.transform.position.z);
             AIPlacementArray[randX, randZ] = true;
             AIPlacementArray[randX - 1, randZ] = true;
             AIPlacementArray[randX - 2, randZ] = true;
         }
+        else
+        { //attempt 2 for boat 2
+            randX = Random.Range(2, 10); //generate random pos for boat 2
+            randZ = Random.Range(0, 10);
+            //Debug.Log("X " + randX + " Z " + randZ);
+            if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX - 1, randZ] == false || AIPlacementArray[randX - 2, randZ] == false)
+            {
+                boatCollision2.transform.position = new Vector3(boatCollision2.transform.position.x + (randX * -spaceSizeFireBoard), boatCollision2.transform.position.y - (randZ * spaceSizeFireBoard), boatCollision2.transform.position.z);
+                AIPlacementArray[randX, randZ] = true;
+                AIPlacementArray[randX - 1, randZ] = true;
+                AIPlacementArray[randX - 2, randZ] = true;
+            }
+        }
         //boat 3
         randX = Random.Range(0, 10); //generate random pos for boat 3
-        randZ = Random.Range(1, 8);
-        Debug.Log("X " + randX + " Z " + randZ);
+        randZ = Random.Range(2, 10);
+        //Debug.Log("X " + randX + " Z " + randZ);
         if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX, randZ - 1] == false || AIPlacementArray[randX, randZ - 2] == false)
         {
-            boatCollision3.transform.position = new Vector3(boatCollision3.transform.position.x + (randX * -spaceSize), boatCollision3.transform.position.y - (randZ * spaceSize), boatCollision3.transform.position.z);
+            boatCollision3.transform.position = new Vector3(boatCollision3.transform.position.x + (randX * -spaceSizeFireBoard), boatCollision3.transform.position.y - (randZ * spaceSizeFireBoard), boatCollision3.transform.position.z);
             AIPlacementArray[randX, randZ] = true;
             AIPlacementArray[randX, randZ - 1] = true;
             AIPlacementArray[randX, randZ - 2] = true;
+        }
+        else
+        { //attempt 2 for boat 3
+            randX = Random.Range(0, 10); //generate random pos for boat 3
+            randZ = Random.Range(2, 10);
+            //Debug.Log("X " + randX + " Z " + randZ);
+            if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX, randZ - 1] == false || AIPlacementArray[randX, randZ - 2] == false)
+            {
+                boatCollision3.transform.position = new Vector3(boatCollision3.transform.position.x + (randX * -spaceSizeFireBoard), boatCollision3.transform.position.y - (randZ * spaceSizeFireBoard), boatCollision3.transform.position.z);
+                AIPlacementArray[randX, randZ] = true;
+                AIPlacementArray[randX, randZ - 1] = true;
+                AIPlacementArray[randX, randZ - 2] = true;
+            }
+        }
+        //boat 4
+        randX = Random.Range(3, 10); //generate random pos for boat 4
+        randZ = Random.Range(0, 10);
+        //Debug.Log("X " + randX + " Z " + randZ);
+        if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX - 1, randZ] == false || AIPlacementArray[randX - 2, randZ] == false || AIPlacementArray[randX - 3, randZ] == false)
+        {
+            boatCollision4.transform.position = new Vector3(boatCollision4.transform.position.x + (randX * -spaceSizeFireBoard), boatCollision4.transform.position.y - (randZ * spaceSizeFireBoard), boatCollision4.transform.position.z);
+            AIPlacementArray[randX, randZ] = true;
+            AIPlacementArray[randX - 1, randZ] = true;
+            AIPlacementArray[randX - 2, randZ] = true;
+            AIPlacementArray[randX - 3, randZ] = true;
+        }
+        else
+        {//attempt 2 for boat 4
+            randX = Random.Range(3, 10); //generate random pos for boat 4
+            randZ = Random.Range(0, 10);
+            //Debug.Log("X " + randX + " Z " + randZ);
+            if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX - 1, randZ] == false || AIPlacementArray[randX - 2, randZ] == false || AIPlacementArray[randX - 3, randZ] == false)
+            {
+                boatCollision4.transform.position = new Vector3(boatCollision4.transform.position.x + (randX * -spaceSizeFireBoard), boatCollision4.transform.position.y - (randZ * spaceSizeFireBoard), boatCollision4.transform.position.z);
+                AIPlacementArray[randX, randZ] = true;
+                AIPlacementArray[randX - 1, randZ] = true;
+                AIPlacementArray[randX - 2, randZ] = true;
+                AIPlacementArray[randX - 3, randZ] = true;
+            }
+        }
+        //boat 5
+        randX = Random.Range(0, 10); //generate random pos for boat 5
+        randZ = Random.Range(4, 10);
+        //Debug.Log("X " + randX + " Z " + randZ);
+        if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX, randZ - 1] == false || AIPlacementArray[randX, randZ - 2] == false || AIPlacementArray[randX, randZ - 3] == false || AIPlacementArray[randX, randZ - 4] == false)
+        {
+            boatCollision5.transform.position = new Vector3(boatCollision5.transform.position.x + (randX * -spaceSizeFireBoard), boatCollision5.transform.position.y - (randZ * spaceSizeFireBoard), boatCollision5.transform.position.z);
+            AIPlacementArray[randX, randZ] = true;
+            AIPlacementArray[randX, randZ - 1] = true;
+            AIPlacementArray[randX, randZ - 2] = true;
+            AIPlacementArray[randX, randZ - 3] = true;
+            AIPlacementArray[randX, randZ - 4] = true;
+        }
+        else
+        { //attempt 2 for boat 5
+            randX = Random.Range(0, 10); //generate random pos for boat 5
+            randZ = Random.Range(4, 10);
+            //Debug.Log("X " + randX + " Z " + randZ);
+            if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX, randZ - 1] == false || AIPlacementArray[randX, randZ - 2] == false || AIPlacementArray[randX, randZ - 3] == false || AIPlacementArray[randX, randZ - 4] == false)
+            {
+                boatCollision5.transform.position = new Vector3(boatCollision5.transform.position.x + (randX * -spaceSizeFireBoard), boatCollision5.transform.position.y - (randZ * spaceSizeFireBoard), boatCollision5.transform.position.z);
+                AIPlacementArray[randX, randZ] = true;
+                AIPlacementArray[randX, randZ - 1] = true;
+                AIPlacementArray[randX, randZ - 2] = true;
+                AIPlacementArray[randX, randZ - 3] = true;
+                AIPlacementArray[randX, randZ - 4] = true;
+            }
         }
     }
     // Update is called once per frame
@@ -85,7 +166,7 @@ public class AIController : MonoBehaviour
                     if (boardArray[randX, randZ] == false) //if the AI has not shot there yet
                     {
                         boardArray[randX, randZ] = true; //position is now hit
-                        firePointer.transform.position = new Vector3(firePointer.transform.position.x + (randX * -spaceSize), firePointer.transform.position.y, firePointer.transform.position.z + (randZ * spaceSize)); //place the pin in the spot
+                        firePointer.transform.position = new Vector3(firePointer.transform.position.x + (randX * -spaceSizePlaceBoard), firePointer.transform.position.y, firePointer.transform.position.z + (randZ * spaceSizePlaceBoard)); //place the pin in the spot
                         Instantiate(firePointer, firePointer.transform.position, firePointer.transform.rotation); //create the pin
                         GameControllerScript.oppenTurn = false; //AI's turn is over
                     } //i have more code by Sargis wanted to go a different direction so I ended up deleteing way more than half of it
@@ -105,6 +186,14 @@ public class AIController : MonoBehaviour
         else if (boatCollision3.transform.position == pos)
         {
             GameControllerScript.ApplyDamage(8);
+        }
+        else if (boatCollision4.transform.position == pos)
+        {
+            GameControllerScript.ApplyDamage(9);
+        }
+        else if (boatCollision5.transform.position == pos)
+        {
+            GameControllerScript.ApplyDamage(10);
         }
     }
 }

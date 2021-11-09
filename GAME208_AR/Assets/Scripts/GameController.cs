@@ -47,6 +47,8 @@ public class GameController : MonoBehaviour
     int enemyBoat1Health = 4;
     int enemyBoat2Health = 6;
     int enemyBoat3Health = 6;
+    int enemyBoat4Health = 8;
+    int enemyBoat5Health = 10;
 
     private void Awake()
     {
@@ -68,6 +70,16 @@ public class GameController : MonoBehaviour
         {
             enemyBoat3Health--;
             Debug.Log("Collided " + enemyBoat3Health);
+        }
+        if (boatNumber == 9)
+        {
+            enemyBoat4Health--;
+            Debug.Log("Collided " + enemyBoat4Health);
+        }
+        if (boatNumber == 10)
+        {
+            enemyBoat5Health--;
+            Debug.Log("Collided " + enemyBoat5Health);
         }
     }
     // Start is called before the first frame update

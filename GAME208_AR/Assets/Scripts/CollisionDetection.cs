@@ -24,11 +24,11 @@ public class CollisionDetection : MonoBehaviour
         if (collision.gameObject.tag == "EnemyPin") //check which pin hit the target
         {
             Debug.Log("Collided");
-            GameControllerScript.DamageCheckGameController(gameObject.transform.position);
+            GameControllerScript.DamageCheckGameController(gameObject.name);
         }
         if (collision.gameObject.tag == "FirePin")
         {
-            AIControllerScript.DamageCheckAIController(gameObject.transform.position); //do a damage check of the AI ships
+            AIControllerScript.DamageCheckAIController(gameObject.name); //do a damage check of the AI ships
         }
     }
 }

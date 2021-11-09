@@ -60,25 +60,25 @@ public class GameController : MonoBehaviour
     {
     
     }
-    public void DamageCheckGameController(Vector3 pos)
+    public void DamageCheckGameController(string shipName)
     {
-        if (smallShip.transform.position == pos) //check which boat got collided with collision 
+        if (smallShip.name == shipName) //check which boat got collided with collision 
         {
             ApplyDamage(1);
         }
-        else if (mediumShip.transform.position == pos)
+        else if (mediumShip.name == shipName)
         {
             ApplyDamage(2);
         }
-        else if (mediumShip2.transform.position == pos)
+        else if (mediumShip2.name == shipName)
         {
             ApplyDamage(3);
         }
-        else if (battleshipShip.transform.position == pos)
+        else if (battleshipShip.name == shipName)
         {
             ApplyDamage(4);
         }
-        else if (destroyerShip.transform.position == pos)
+        else if (destroyerShip.name == shipName)
         {
             ApplyDamage(5);
         }

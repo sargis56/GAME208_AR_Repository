@@ -176,25 +176,25 @@ public class AIController : MonoBehaviour
             }
         }
     }
-    public void DamageCheckAIController(Vector3 pos)
+    public void DamageCheckAIController(string shipName)
     {
-        if (boatCollision1.transform.position == pos) //check which boat got collided with collision 
+        if (boatCollision1.name == shipName) //check which boat got collided with collision 
         {
             GameControllerScript.ApplyDamage(6);
         }
-        else if (boatCollision2.transform.position == pos)
+        else if (boatCollision2.name == shipName)
         {
             GameControllerScript.ApplyDamage(7);
         }
-        else if (boatCollision3.transform.position == pos)
+        else if (boatCollision3.name == shipName)
         {
             GameControllerScript.ApplyDamage(8);
         }
-        else if (boatCollision4.transform.position == pos)
+        else if (boatCollision4.name == shipName)
         {
             GameControllerScript.ApplyDamage(9);
         }
-        else if (boatCollision5.transform.position == pos)
+        else if (boatCollision5.name == shipName)
         {
             GameControllerScript.ApplyDamage(10);
         }

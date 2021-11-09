@@ -5,7 +5,11 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - objectToSpawn: {instanceID: 0}
-  - txt: {instanceID: 0}
+  - smallShip: {instanceID: 0}
+  - mediumShip: {instanceID: 0}
+  - mediumShip2: {instanceID: 0}
+  - battleshipShip: {instanceID: 0}
+  - destroyerShip: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

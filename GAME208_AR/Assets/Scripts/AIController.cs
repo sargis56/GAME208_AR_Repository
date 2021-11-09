@@ -43,7 +43,7 @@ public class AIController : MonoBehaviour
         //GameControlleScript = GameControllerRef.GetComponent<GameController>();
         int randX, randZ;
         //boat 1
-        randX = Random.Range(0, 10); //generate random pos for boat 1
+        randX = Random.Range(0, 9); //generate random pos for boat 1
         randZ = Random.Range(1, 9);
         //Debug.Log("X " + randX + " Z " + randZ);
         if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX, randZ - 1] == false)
@@ -53,8 +53,8 @@ public class AIController : MonoBehaviour
             AIPlacementArray[randX, randZ - 1] = true;
         }
         //boat 2
-        randX = Random.Range(2, 8); //generate random pos for boat 2
-        randZ = Random.Range(0, 10);
+        randX = Random.Range(2, 7); //generate random pos for boat 2
+        randZ = Random.Range(0, 9);
         //Debug.Log("X " + randX + " Z " + randZ);
         if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX - 1, randZ] == false || AIPlacementArray[randX - 2, randZ] == false)
         {
@@ -65,8 +65,8 @@ public class AIController : MonoBehaviour
         }
         else
         { //attempt 2 for boat 2
-            randX = Random.Range(2, 8); //generate random pos for boat 2
-            randZ = Random.Range(0, 10);
+            randX = Random.Range(2, 7); //generate random pos for boat 2
+            randZ = Random.Range(0, 9);
             //Debug.Log("X " + randX + " Z " + randZ);
             if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX - 1, randZ] == false || AIPlacementArray[randX - 2, randZ] == false)
             {
@@ -77,8 +77,8 @@ public class AIController : MonoBehaviour
             }
         }
         //boat 3
-        randX = Random.Range(0, 10); //generate random pos for boat 3
-        randZ = Random.Range(2, 8);
+        randX = Random.Range(0, 9); //generate random pos for boat 3
+        randZ = Random.Range(2, 7);
         //Debug.Log("X " + randX + " Z " + randZ);
         if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX, randZ - 1] == false || AIPlacementArray[randX, randZ - 2] == false)
         {
@@ -89,8 +89,8 @@ public class AIController : MonoBehaviour
         }
         else
         { //attempt 2 for boat 3
-            randX = Random.Range(0, 10); //generate random pos for boat 3
-            randZ = Random.Range(2, 8);
+            randX = Random.Range(0, 9); //generate random pos for boat 3
+            randZ = Random.Range(2, 6);
             //Debug.Log("X " + randX + " Z " + randZ);
             if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX, randZ - 1] == false || AIPlacementArray[randX, randZ - 2] == false)
             {
@@ -115,7 +115,7 @@ public class AIController : MonoBehaviour
         else
         {//attempt 2 for boat 4
             randX = Random.Range(3, 7); //generate random pos for boat 4
-            randZ = Random.Range(0, 10);
+            randZ = Random.Range(0, 9);
             //Debug.Log("X " + randX + " Z " + randZ);
             if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX - 1, randZ] == false || AIPlacementArray[randX - 2, randZ] == false || AIPlacementArray[randX - 3, randZ] == false)
             {
@@ -127,7 +127,7 @@ public class AIController : MonoBehaviour
             }
         }
         //boat 5
-        randX = Random.Range(0, 10); //generate random pos for boat 5
+        randX = Random.Range(0, 9); //generate random pos for boat 5
         randZ = Random.Range(4, 7);
         //Debug.Log("X " + randX + " Z " + randZ);
         if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX, randZ - 1] == false || AIPlacementArray[randX, randZ - 2] == false || AIPlacementArray[randX, randZ - 3] == false || AIPlacementArray[randX, randZ - 4] == false)
@@ -141,7 +141,7 @@ public class AIController : MonoBehaviour
         }
         else
         { //attempt 2 for boat 5
-            randX = Random.Range(0, 10); //generate random pos for boat 5
+            randX = Random.Range(0, 9); //generate random pos for boat 5
             randZ = Random.Range(4, 7);
             //Debug.Log("X " + randX + " Z " + randZ);
             if (AIPlacementArray[randX, randZ] == false || AIPlacementArray[randX, randZ - 1] == false || AIPlacementArray[randX, randZ - 2] == false || AIPlacementArray[randX, randZ - 3] == false || AIPlacementArray[randX, randZ - 4] == false)
@@ -176,7 +176,7 @@ public class AIController : MonoBehaviour
             }
         }
     }
-    public void DamageCheck(Vector3 pos)
+    public void DamageCheckAIController(Vector3 pos)
     {
         if (boatCollision1.transform.position == pos) //check which boat got collided with collision 
         {

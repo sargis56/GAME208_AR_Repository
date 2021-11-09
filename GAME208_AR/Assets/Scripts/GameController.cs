@@ -43,7 +43,13 @@ public class GameController : MonoBehaviour
     private GameObject selectedShip;
 
     private int numShips = 5;
-    //boat variables
+    //player boat variables
+    int playerBoat1Health = 4;
+    int playerBoat2Health = 6;
+    int playerBoat3Health = 6;
+    int playerBoat4Health = 8;
+    int playerBoat5Health = 10;
+    //enemy boat variables
     int enemyBoat1Health = 4;
     int enemyBoat2Health = 6;
     int enemyBoat3Health = 6;
@@ -54,8 +60,55 @@ public class GameController : MonoBehaviour
     {
     
     }
+    public void DamageCheckGameController(Vector3 pos)
+    {
+        if (smallShip.transform.position == pos) //check which boat got collided with collision 
+        {
+            ApplyDamage(1);
+        }
+        else if (mediumShip.transform.position == pos)
+        {
+            ApplyDamage(2);
+        }
+        else if (mediumShip2.transform.position == pos)
+        {
+            ApplyDamage(3);
+        }
+        else if (battleshipShip.transform.position == pos)
+        {
+            ApplyDamage(4);
+        }
+        else if (destroyerShip.transform.position == pos)
+        {
+            ApplyDamage(5);
+        }
+    }
     public void ApplyDamage(int boatNumber) //players boats are 1-5 and the enemies boats are 6-10
     {
+        if (boatNumber == 1)
+        {
+            playerBoat1Health--;
+            Debug.Log("Collided " + playerBoat1Health);
+        }
+        if (boatNumber == 2)
+        {
+            playerBoat2Health--;
+            Debug.Log("Collided " + playerBoat2Health);
+        }
+        if (boatNumber == 3)
+        {
+            playerBoat3Health--;
+            Debug.Log("Collided " + playerBoat3Health);
+        }
+        if (boatNumber == 4)
+        {
+            playerBoat4Health--;
+            Debug.Log("Collided " + playerBoat4Health);
+        }
+        if (boatNumber == 5)
+        {
+            playerBoat5Health--;
+        }
         if (boatNumber == 6)
         {
             enemyBoat1Health--;
@@ -82,6 +135,17 @@ public class GameController : MonoBehaviour
             Debug.Log("Collided " + enemyBoat5Health);
         }
     }
+    void CheckWin()
+    {
+        if (enemyBoat1Health == 0 && enemyBoat2Health == 0 && enemyBoat3Health == 0 && enemyBoat4Health == 0 && enemyBoat5Health == 0)
+        {
+            win = true;
+        }
+        else if (playerBoat1Health == 0 && playerBoat2Health == 0 && playerBoat3Health == 0 && playerBoat4Health == 0 && playerBoat5Health == 0)
+        {
+            lose = true;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -90,6 +154,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckWin();
         if (enemyBoat1Health <= 0 && enemyBoat2Health <= 0 && enemyBoat3Health <= 0)
         {
             win = true;

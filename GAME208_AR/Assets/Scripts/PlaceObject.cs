@@ -10,7 +10,13 @@ using UnityEngine.EventSystems;
 public class PlaceObject : MonoBehaviour
 {
     public GameObject objectToSpawn;
-    
+
+    public GameObject smallShip;
+    public GameObject mediumShip;
+    public GameObject mediumShip2;
+    public GameObject battleshipShip;
+    public GameObject destroyerShip;
+
     private GameObject spawnedObject;
     private ARRaycastManager arRaycastManager;
     private Vector2 touchPosition;

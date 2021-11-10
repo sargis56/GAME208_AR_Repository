@@ -11,7 +11,8 @@ public class PlaceObject : MonoBehaviour
 {
     //public GameObject objectToSpawn;
     private GameObject objectToSpawn;
-    private int numShips = 5;
+    public int numShips = 5;
+    public int numPins = 0;
 
     public GameObject smallShip;
     public GameObject mediumShip;
@@ -50,6 +51,12 @@ public class PlaceObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (numPins >= 5)
+        {
+            GameControllerScript.oppenAngry = true;
+        }
+
         if (numShips == 5)
         {
             objectToSpawn = smallShip;
@@ -94,13 +101,17 @@ public class PlaceObject : MonoBehaviour
             Pose hitPose = hits[0].pose;
             if (spawnedObject == null)
             {
-                //spawnedObject = Instantiate(objectToSpawn, hitPose.position, hitPose.rotation);
-                Instantiate(objectToSpawn, hitPose.position, hitPose.rotation);
-                numShips -= 1;
-
                 if ((GameControllerScript.oppenTurn == false) && (GameControllerScript.placing == true)) 
                 {
+                    Instantiate(objectToSpawn, hitPose.position, Quaternion.Euler(Vector3.right * -77));
+                    numPins += 1;
                     GameControllerScript.oppenTurn = true;
+                }
+                else
+                {
+                    //spawnedObject = Instantiate(objectToSpawn, hitPose.position, hitPose.rotation);
+                    Instantiate(objectToSpawn, hitPose.position, hitPose.rotation);
+                    numShips -= 1;
                 }
             }
             else
@@ -110,5 +121,6 @@ public class PlaceObject : MonoBehaviour
             }
             
         }
+
     }
 }

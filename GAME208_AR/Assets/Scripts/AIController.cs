@@ -8,6 +8,8 @@ public class AIController : MonoBehaviour
     public GameController GameControllerScript;
     public GameObject firePointer;
 
+    public int enemyPinNum = 0; //for testing
+
     public GameObject boatCollision1;
     public GameObject boatCollision2;
     public GameObject boatCollision3;
@@ -158,6 +160,11 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enemyPinNum >= 100)
+        {
+            GameControllerScript.lose = true;
+        }
+
         if (AIToggle == true)
         {
             if (GameControllerScript.oppenTurn == true) //if the players move is over
@@ -172,6 +179,7 @@ public class AIController : MonoBehaviour
                         firePointer.transform.position = new Vector3(firePointer.transform.position.x + (randX * spaceSizePlaceBoard), firePointer.transform.position.y, firePointer.transform.position.z + (randZ * -spaceSizePlaceBoard)); //place the pin in the spot
                         Instantiate(firePointer, firePointer.transform.position, firePointer.transform.rotation); //create the pin
                         GameControllerScript.oppenTurn = false; //AI's turn is over
+                        enemyPinNum += 1;
                     } //i have more code by Sargis wanted to go a different direction so I ended up deleteing way more than half of it
             }
         }

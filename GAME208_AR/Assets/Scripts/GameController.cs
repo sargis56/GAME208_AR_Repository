@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public bool win;
     public bool lose;
     public bool oppenTurn;
+    public bool oppenAngry;
 
     public bool placing;
     public bool firing;
@@ -56,9 +57,16 @@ public class GameController : MonoBehaviour
     int enemyBoat4Health = 8;
     int enemyBoat5Health = 10;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        
+    }
+
     private void Awake()
     {
-    
+        
     }
     public void DamageCheckGameController(string shipName)
     {
@@ -146,11 +154,8 @@ public class GameController : MonoBehaviour
             lose = true;
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+
+    
     // Update is called once per frame
     void Update()
     {
@@ -189,7 +194,7 @@ public class GameController : MonoBehaviour
             loseSailor3.SetActive(false);
         }
 
-        if (oppenTurn == true)
+        if (oppenAngry == true)
         {
             enemySailor.SetActive(true);
         }

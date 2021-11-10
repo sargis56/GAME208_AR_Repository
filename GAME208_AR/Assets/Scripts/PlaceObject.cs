@@ -9,17 +9,22 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(ARRaycastManager))]
 public class PlaceObject : MonoBehaviour
 {
-    public GameObject objectToSpawn;
+    //public GameObject objectToSpawn;
+    private GameObject objectToSpawn;
+    private int numShips = 5;
 
     public GameObject smallShip;
     public GameObject mediumShip;
     public GameObject mediumShip2;
     public GameObject battleshipShip;
     public GameObject destroyerShip;
+    public GameObject pin;
 
     private GameObject spawnedObject;
     private ARRaycastManager arRaycastManager;
     private Vector2 touchPosition;
+
+    public GameController GameControllerScript;
 
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
     void Awake()
@@ -45,6 +50,37 @@ public class PlaceObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (numShips == 5)
+        {
+            objectToSpawn = smallShip;
+        }
+
+        if (numShips == 4)
+        {
+            objectToSpawn = mediumShip;
+        }
+
+        if (numShips == 3)
+        {
+            objectToSpawn = mediumShip2;
+        }
+
+        if (numShips == 2)
+        {
+            objectToSpawn = battleshipShip;
+        }
+
+        if (numShips == 1)
+        {
+            objectToSpawn = destroyerShip;
+        }
+
+        if (numShips <= 0)
+        {
+            GameControllerScript.placing = true;
+            objectToSpawn = pin;
+        }
+
         //Debug.Log("update");
         // Check to see if there was no Touch event on Screen
 
@@ -54,14 +90,25 @@ public class PlaceObject : MonoBehaviour
         // Touch event occured
         if (arRaycastManager.Raycast(touchPosition, hits, TrackableType.All))
         {
-            
-            
+
             Pose hitPose = hits[0].pose;
             if (spawnedObject == null)
-                spawnedObject = Instantiate(objectToSpawn, hitPose.position,
-                hitPose.rotation);
+            {
+                //spawnedObject = Instantiate(objectToSpawn, hitPose.position, hitPose.rotation);
+                Instantiate(objectToSpawn, hitPose.position, hitPose.rotation);
+                numShips -= 1;
+
+                if ((GameControllerScript.oppenTurn == false) && (GameControllerScript.placing == true)) 
+                {
+                    GameControllerScript.oppenTurn = true;
+                }
+            }
             else
+            {
                 spawnedObject.transform.position = hitPose.position;
+                //Instantiate(objectToSpawn, hitPose.position, hitPose.rotation);
+            }
+            
         }
     }
 }

@@ -693,12 +693,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12952e3c1ea670543a03eaf537de08a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 1531921494}
   smallShip: {fileID: 17282804}
   mediumShip: {fileID: 1513250928}
   mediumShip2: {fileID: 556656757}
   battleshipShip: {fileID: 2011175000}
   destroyerShip: {fileID: 1531921494}
+  pin: {fileID: 1688965095}
+  GameControllerScript: {fileID: 1876740957}
 --- !u!114 &586617271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1652,6 +1653,7 @@ MonoBehaviour:
   mediumShip2: {fileID: 556656757}
   battleshipShip: {fileID: 2011175000}
   destroyerShip: {fileID: 1531921494}
+  numShips: 5
 --- !u!4 &1876740958
 Transform:
   m_ObjectHideFlags: 0

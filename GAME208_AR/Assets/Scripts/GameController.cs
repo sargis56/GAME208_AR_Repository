@@ -42,7 +42,7 @@ public class GameController : MonoBehaviour
     private bool selectBattleshipShip;
     private GameObject selectedShip;
 
-    private int numShips = 5;
+    public int numShips = 5;
     //player boat variables
     int playerBoat1Health = 4;
     int playerBoat2Health = 6;

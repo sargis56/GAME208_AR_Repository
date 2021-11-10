@@ -169,7 +169,7 @@ public class AIController : MonoBehaviour
                     if (boardArray[randX, randZ] == false) //if the AI has not shot there yet
                     {
                         boardArray[randX, randZ] = true; //position is now hit
-                        firePointer.transform.position = new Vector3(firePointer.transform.position.x + (randX * spaceSizePlaceBoard), firePointer.transform.position.y, firePointer.transform.position.z + (randZ * spaceSizePlaceBoard)); //place the pin in the spot
+                        firePointer.transform.position = new Vector3(firePointer.transform.position.x + (randX * spaceSizePlaceBoard), firePointer.transform.position.y, firePointer.transform.position.z + (randZ * -spaceSizePlaceBoard)); //place the pin in the spot
                         Instantiate(firePointer, firePointer.transform.position, firePointer.transform.rotation); //create the pin
                         GameControllerScript.oppenTurn = false; //AI's turn is over
                     } //i have more code by Sargis wanted to go a different direction so I ended up deleteing way more than half of it

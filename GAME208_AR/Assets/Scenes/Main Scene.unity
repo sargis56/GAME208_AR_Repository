@@ -187,9 +187,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1504101656118674444, guid: e12f4b5b65d498746ac2d77cfe5a1552, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1868625311}
+    - target: {fileID: 1504101656118674444, guid: e12f4b5b65d498746ac2d77cfe5a1552, type: 3}
       propertyPath: GameControllerScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1876740957}
     - target: {fileID: 1504101656118674447, guid: e12f4b5b65d498746ac2d77cfe5a1552, type: 3}
       propertyPath: m_Constraints
       value: 122
@@ -742,9 +746,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4575170260019680987, guid: c7206a1ded3501d4285d95e24aafe309, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1868625311}
+    - target: {fileID: 4575170260019680987, guid: c7206a1ded3501d4285d95e24aafe309, type: 3}
       propertyPath: GameControllerScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1876740957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7206a1ded3501d4285d95e24aafe309, type: 3}
 --- !u!1 &556656757 stripped
@@ -1323,6 +1331,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5369821035424073545, guid: 29e160cf077a657408db6d13799867e9, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1868625311}
+    - target: {fileID: 5369821035424073545, guid: 29e160cf077a657408db6d13799867e9, type: 3}
+      propertyPath: GameControllerScript
+      value: 
+      objectReference: {fileID: 1876740957}
     - target: {fileID: 5552892962426027961, guid: 29e160cf077a657408db6d13799867e9, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -1578,9 +1594,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2719232635490612403, guid: 9e6b03d850b6be14d9c9914f460720ba, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1868625311}
+    - target: {fileID: 2719232635490612403, guid: 9e6b03d850b6be14d9c9914f460720ba, type: 3}
       propertyPath: GameControllerScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1876740957}
     - target: {fileID: 2989772764721010425, guid: 9e6b03d850b6be14d9c9914f460720ba, type: 3}
       propertyPath: m_Name
       value: Boat_Medium
@@ -1632,9 +1652,13 @@ PrefabInstance:
       value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 2919481009610645593, guid: c550fa0c1ff64844c8ed9751f20ce652, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1868625311}
+    - target: {fileID: 2919481009610645593, guid: c550fa0c1ff64844c8ed9751f20ce652, type: 3}
       propertyPath: GameControllerScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1876740957}
     - target: {fileID: 3390838884025370544, guid: c550fa0c1ff64844c8ed9751f20ce652, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2137,9 +2161,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7013178827946934717, guid: 2706b9e08a27dbc4f8b5a258f1e1af0a, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1868625311}
+    - target: {fileID: 7013178827946934717, guid: 2706b9e08a27dbc4f8b5a258f1e1af0a, type: 3}
       propertyPath: GameControllerScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1876740957}
     - target: {fileID: 7013178827946934718, guid: 2706b9e08a27dbc4f8b5a258f1e1af0a, type: 3}
       propertyPath: m_Size.y
       value: 0.49460393
@@ -2463,6 +2491,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8988199040143143530, guid: 95c46b4b88104cb4899752a916540a00, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1868625311}
+    - target: {fileID: 8988199040143143530, guid: 95c46b4b88104cb4899752a916540a00, type: 3}
+      propertyPath: GameControllerScript
+      value: 
+      objectReference: {fileID: 1876740957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95c46b4b88104cb4899752a916540a00, type: 3}
 --- !u!1001 &2969137522669454011
@@ -2476,6 +2512,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7187693368409324461, guid: d49a0765ce59c444282598a32a4d006c, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1868625311}
+    - target: {fileID: 7187693368409324461, guid: d49a0765ce59c444282598a32a4d006c, type: 3}
+      propertyPath: GameControllerScript
+      value: 
+      objectReference: {fileID: 1876740957}
     - target: {fileID: 7187693368409324462, guid: d49a0765ce59c444282598a32a4d006c, type: 3}
       propertyPath: m_Size.y
       value: 5
@@ -2587,6 +2631,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5369821035424073545, guid: 29e160cf077a657408db6d13799867e9, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1868625311}
+    - target: {fileID: 5369821035424073545, guid: 29e160cf077a657408db6d13799867e9, type: 3}
+      propertyPath: GameControllerScript
+      value: 
+      objectReference: {fileID: 1876740957}
     - target: {fileID: 5552892962426027961, guid: 29e160cf077a657408db6d13799867e9, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -2798,6 +2850,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6874945111407015914, guid: 762722ea20f99cb459eda9dd2fa28bf0, type: 3}
+      propertyPath: AIControllerScript
+      value: 
+      objectReference: {fileID: 1868625311}
+    - target: {fileID: 6874945111407015914, guid: 762722ea20f99cb459eda9dd2fa28bf0, type: 3}
+      propertyPath: GameControllerScript
+      value: 
+      objectReference: {fileID: 1876740957}
     - target: {fileID: 7135182699215080001, guid: 762722ea20f99cb459eda9dd2fa28bf0, type: 3}
       propertyPath: m_Enabled
       value: 1

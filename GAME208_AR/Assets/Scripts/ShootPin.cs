@@ -18,4 +18,11 @@ public class ShootPin : MonoBehaviour
     {
         rb.velocity = transform.forward * speed;
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "FirePin") //check which pin hit the target
+        {
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+        }
+    }
 }

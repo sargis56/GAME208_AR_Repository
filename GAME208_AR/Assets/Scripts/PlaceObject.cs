@@ -24,6 +24,7 @@ public class PlaceObject : MonoBehaviour
     private GameObject spawnedObject;
     private ARRaycastManager arRaycastManager;
     private Vector2 touchPosition;
+    float timeBetween = 0;
 
     public GameController GameControllerScript;
 
@@ -51,7 +52,7 @@ public class PlaceObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        timeBetween -= Time.deltaTime;
         if (numPins >= 5)
         {
             GameControllerScript.oppenAngry = true;
@@ -95,9 +96,9 @@ public class PlaceObject : MonoBehaviour
            // txt.text = "blah blah text";
             return;
         // Touch event occured
-        if (arRaycastManager.Raycast(touchPosition, hits, TrackableType.All))
+        if (arRaycastManager.Raycast(touchPosition, hits, TrackableType.All) && timeBetween <= 0)
         {
-
+            timeBetween = 1;
             Pose hitPose = hits[0].pose;
             if (spawnedObject == null)
             {

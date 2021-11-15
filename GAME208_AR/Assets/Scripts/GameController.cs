@@ -153,10 +153,6 @@ public class GameController : MonoBehaviour
     void Update()
     {
         CheckWin();
-        if (enemyBoat1Health <= 0 && enemyBoat2Health <= 0 && enemyBoat3Health <= 0)
-        {
-            win = true;
-        }
         if (win == true)
         {
             winText.SetActive(true);
